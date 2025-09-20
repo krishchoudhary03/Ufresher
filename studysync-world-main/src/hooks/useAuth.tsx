@@ -145,7 +145,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         options: {
           data: {
             full_name: userData.name,
-            avatar_url: userData.profilePic,
+            avatar_url: userData.profile_pic,
           }
         }
       });
@@ -161,7 +161,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
           name: userData.name || '',
           email: userData.email || '',
           role: userData.role || 'junior',
-          profile_pic: userData.profilePic || '',
+          profile_pic: userData.profile_pic || '',
           age: userData.age || 18,
           college: userData.college || '',
           stream: userData.stream || '',

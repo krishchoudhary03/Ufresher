@@ -1,14 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Users, MessageCircle, GraduationCap, Shield, Sparkles, Heart } from 'lucide-react';
 
-interface HomeProps {
-  onGetStarted: () => void;
-}
-
-const Home = ({ onGetStarted }: HomeProps) => {
+const Home = () => {
+  const navigate = useNavigate();
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
 
   const features = [
@@ -61,7 +59,7 @@ const Home = ({ onGetStarted }: HomeProps) => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
-                onClick={onGetStarted}
+                onClick={() => navigate('/auth')}
                 className="btn-cosmic text-lg px-8 py-4 pulse-glow"
                 size="lg"
               >
